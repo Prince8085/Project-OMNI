@@ -1,0 +1,24 @@
+# Dangerous command patterns (regex)
+# Commands matching these patterns will be blocked
+
+# Linux/Unix dangerous commands
+rm\s+-rf\s+/
+:\(\)\{.*\}
+mkfs\.
+dd\s+if=.*of=/dev/
+chmod\s+-R\s+777\s+/
+> /dev/sda
+
+# Windows dangerous commands
+del\s+/f\s+/s\s+/q\s+C:\\
+format\s+C:
+rd\s+/s\s+/q\s+C:\\
+reg\s+delete\s+HKLM
+
+# General risky patterns
+sudo\s+su
+sudo\s+rm
+wget.*\|\s*sh
+curl.*\|\s*bash
+eval.*input
+exec.*input

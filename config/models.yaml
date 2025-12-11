@@ -1,0 +1,59 @@
+llms:
+  primary: "gemini-3-pro-preview"
+  fallback: "gemini-2.0-flash-exp"
+  vision: "gemini-3-pro-preview"
+  
+  # Model configurations
+  qwen-free:
+    provider: "openrouter"
+    model_name: "qwen/qwen3-235b-a22b:free"
+    temperature: 0.7
+    max_tokens: 4096
+
+  gemini-3-pro-preview:
+    provider: "google"
+    temperature: 0.7
+    max_tokens: 8192
+  
+  gemini-2.0-flash-exp:
+    provider: "google"
+    temperature: 0.5
+    max_tokens: 4096
+
+execution:
+  default_executor: "open_interpreter"
+  sandbox_enabled: true
+  require_confirmation: true
+  timeout_seconds: 300
+
+safety:
+  auto_approve_safe_commands: true
+  max_file_operations_per_command: 10
+  max_terminal_commands_per_session: 50
+  blocked_patterns_file: "config/blocked_commands.txt"
+  
+  # Permission tiers
+  safe_operations:
+    - "read_file"
+    - "list_directory"
+    - "get_file_info"
+    - "search_web"
+    - "calculate"
+  
+  requires_confirmation:
+    - "write_file"
+    - "delete_file"
+    - "move_file"
+    - "execute_command"
+    - "install_package"
+  
+  blocked_operations:
+    - "format_disk"
+    - "delete_system_files"
+    - "modify_registry"
+
+logging:
+  level: "INFO"
+  format: "json"
+  log_all_actions: true
+  retention_days: 30

@@ -1,0 +1,33 @@
+# Core Dependencies
+open-interpreter>=0.2.0
+langgraph>=0.0.40
+langchain>=0.1.0
+langchain-openai>=0.0.5
+langchain-anthropic>=0.0.1
+langchain-google-genai>=0.0.5
+
+# LLM APIs
+openai>=1.0.0
+anthropic>=0.18.0
+google-generativeai>=0.3.0
+
+# Automation
+pyautogui>=0.9.54
+playwright>=1.40.0
+pillow>=10.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+rich>=13.0.0
+pydantic>=2.0.0
+pyyaml>=6.0.0
+click>=8.1.0
+customtkinter>=5.2.0
+
+# Safety & Logging
+docker>=7.0.0
+
+# Optional Voice (for Phase 4)
+# openai-whisper>=0.1.0
+# pyttsx3>=2.90
+# elevenlabs>=0.2.0
